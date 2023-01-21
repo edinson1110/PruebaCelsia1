@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PruebaTecnicaModelStoreContainer" CdmEntityContainer="PruebaTecnicaEntities">
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="PruebaTecnicaModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="TOKEN" ColumnName="TOKEN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="INFO">
+      <EntityTypeMapping TypeName="PruebaTecnicaModel.INFO">
+        <MappingFragment StoreEntitySet="INFO">
+          <ScalarProperty Name="ConnectionDeviceId" ColumnName="ConnectionDeviceId" />
+          <ScalarProperty Name="EventProcessedUtcTime" ColumnName="EventProcessedUtcTime" />
+          <ScalarProperty Name="HEFESTO_ID" ColumnName="HEFESTO_ID" />
+          <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+          <ScalarProperty Name="var_name" ColumnName="var_name" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="plugin" ColumnName="plugin" />
+          <ScalarProperty Name="request" ColumnName="request" />
+          <ScalarProperty Name="var_name_1" ColumnName="var_name_1" />
+          <ScalarProperty Name="device" ColumnName="device" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

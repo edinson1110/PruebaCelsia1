@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PruebaTecnicaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'PruebaTecnica.dbo.INFO' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="INFO">
+    <Key>
+      <PropertyRef Name="ConnectionDeviceId" />
+      <PropertyRef Name="EventProcessedUtcTime" />
+      <PropertyRef Name="HEFESTO_ID" />
+      <PropertyRef Name="timestamp" />
+      <PropertyRef Name="value" />
+      <PropertyRef Name="plugin" />
+      <PropertyRef Name="request" />
+      <PropertyRef Name="device" />
+    </Key>
+    <Property Name="ConnectionDeviceId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EventProcessedUtcTime" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="HEFESTO_ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="timestamp" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="var_name" Type="nvarchar(max)" />
+    <Property Name="value" Type="int" Nullable="false" />
+    <Property Name="plugin" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="request" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="var_name_1" Type="nvarchar" MaxLength="50" />
+    <Property Name="device" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="USERNAME" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PASSWORD" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TOKEN" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="PruebaTecnicaModelStoreContainer">
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="INFO" EntityType="Self.INFO" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [INFO].[ConnectionDeviceId] AS [ConnectionDeviceId], 
+    [INFO].[EventProcessedUtcTime] AS [EventProcessedUtcTime], 
+    [INFO].[HEFESTO_ID] AS [HEFESTO_ID], 
+    [INFO].[timestamp] AS [timestamp], 
+    [INFO].[var_name] AS [var_name], 
+    [INFO].[value] AS [value], 
+    [INFO].[plugin] AS [plugin], 
+    [INFO].[request] AS [request], 
+    [INFO].[var_name_1] AS [var_name_1], 
+    [INFO].[device] AS [device]
+    FROM [dbo].[INFO] AS [INFO]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
